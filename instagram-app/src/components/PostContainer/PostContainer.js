@@ -7,8 +7,8 @@ const PostContainer = props => {
     console.log(props.data);
     return (
         <div className='post-container'>
-            {props.data.map(c => (
-                <CommentSection key={props.data.c}/>
+            {props.data.map(d => (
+                <CommentSection key={this.props.d}/>
             ))};
         </div>
     )

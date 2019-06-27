@@ -4,18 +4,22 @@ import dummyData from './dummy-data';
 import './App.css';
 
 
-function App(props) {
-  console.log(props.data);
-  return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Insta Clone!</h1>
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+
+  }
+
+  render() {
+    return(
+      <div>
         {dummyData.map(data => (
-          <PostContainer {props.data}/>
+          console.log(data);
+          <PostContainer key={this.props.data}/>
         ))};
-      </header>
-    </div>
-  );
+      </div>
+    )
+  }
 }
 
 export default App;
