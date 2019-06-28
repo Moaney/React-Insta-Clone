@@ -1,25 +1,33 @@
 import React from 'react';
 import PostContainer from './components/PostContainer/PostContainer';
 import dummyData from './dummy-data';
+import PropTypes from 'prop-types';
 import './App.css';
 
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-
+  constructor() {
+    super();
+    this.state = { data: dummyData };
   }
 
   render() {
     return(
       <div>
         {dummyData.map(data => (
-          console.log(data);
-          <PostContainer key={this.props.data}/>
+          <PostContainer data={this.state.data} key={data.id} />
         ))};
       </div>
     )
   }
+}
+
+App.propTypes = {
+  data: PropTypes.shape({
+    id: PropTypes.string,
+    username: PropTypes.string,
+    thumbnailUrl: PropTypes.string
+  })
 }
 
 export default App;

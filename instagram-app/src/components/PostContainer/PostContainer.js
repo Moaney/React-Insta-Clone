@@ -1,17 +1,20 @@
 import React from 'react';
 import CommentSection from '../CommentSection/CommentSection';
-
-
+import PropTypes from 'prop-types';
 
 const PostContainer = props => {
-    console.log(props.data);
     return (
         <div className='post-container'>
-            {props.data.map(d => (
-                <CommentSection key={this.props.d}/>
-            ))};
+            {props.data.map(comment => (
+                    <CommentSection key={comment.imageUrl} comment={comment} />
+            ))}
+           
         </div>
     )
 }
+
+PostContainer.propTypes = {
+    comment: PropTypes.arrayOf(PropTypes.object)
+};
 
 export default PostContainer;
