@@ -15,7 +15,7 @@ class App extends React.Component {
     return(
       <div>
         {dummyData.map(data => (
-          <PostContainer data={this.state.data} key={data.id} />
+          <PostContainer data={this.state.data} />
         ))};
       </div>
     )
